@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mal 2024 Anime Recap</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        font-size: 16px;
+        color: #333;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mal 2024 Anime Recap</h1>
+      <form action="/submit_username" method="POST" id="usernameForm">
+        <label for="username">Enter MAL Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="e.g., your_username"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+      <div class="loading" id="loadingMessage">Loading... Please wait.</div>
+    </div>
+    <script>
+      document
+        .getElementById("usernameForm")
+        .addEventListener("submit", function () {
+          // Show the loading message
+          document.getElementById("loadingMessage").style.display = "block";
+        });
+    </script>
+  </body>
+</html>

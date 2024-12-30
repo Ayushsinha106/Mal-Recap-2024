@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Wrapped 2024</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>This year, you watched</h1>
+        <h2><span id="total-anime">{{total_anime}}</span> Anime</h2>
+        <p>
+          with a total watch time of
+          <span id="total-watch-time">{{watchtime}} hours</span>.
+        </p>
+      </header>
+
+      <section class="top-genres">
+        <h2>Top 5 Genres</h2>
+        <ul>
+          {% for genre in genres %}
+          <li>{{genre}}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      <div class="chart-container">
+        <h2>All Genres Graph</h2>
+        <img src="{{ genreDistributionUrl }}" style="width: 100%" alt="" />
+      </div>
+
+      <section class="top-themes">
+        <h2>Top 5 Themes</h2>
+        <ul>
+          {% for theme in themes %}
+          <li>{{theme}}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      <div class="chart-container">
+        <h2>All Themes Graph</h2>
+        <img src="{{ themeDistributionUrl }}" style="width: 100%" alt="" />
+      </div>
+
+      <section class="top-studios">
+        <h2>Top 5 Studios</h2>
+        <ul>
+          {% for studio in studios %}
+          <li>{{studio}}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <div class="chart-container">
+        <h2>All Studios Graph</h2>
+        <img src="{{ studioDistributionUrl }}" style="width: 100%" alt="" />
+      </div>
+
+      <div class="chart-container">
+        <h2>Anime Watched Monthly</h2>
+        <img src="{{ animeWatchingTrendUrl }}" style="width: 100%" alt="" />
+      </div>
+
+      <section class="top-rated">
+        <h2>Top Rated Anime</h2>
+        <p>Your highest-rated(10) anime this year was</p>
+        <ul>
+          {% for anime in top_anime %}
+          <li>{{anime}}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="lower-popular">
+        <h2>Lower Popular Anime</h2>
+        <p>
+          You became part of an anime known by very few:
+          <strong>{{least_popular.title}}</strong>.
+        </p>
+      </section>
+
+      <section class="avg-score">
+        <h2>Your Score vs Overall Score Comparison</h2>
+        <p>Your average score: <strong>{{avg_score}}</strong></p>
+        <p>Community average score: <strong>{{avg_rating}}</strong></p>
+        <img src="{{ scoreRatingUrl }}" style="width: 100%" alt="" />
+      </section>
+
+      <div class="recap-container" id="recap">
+        <!-- Header -->
+        <div class="recap-header">
+          <h1>Anime Recap 2024</h1>
+        </div>
+
+        <!-- Stats -->
+        <div class="stat-summary">
+          <div class="stat-box">
+            <h2>{{total_anime}}</h2>
+            <p>Anime</p>
+          </div>
+          <div class="stat-box">
+            <h2>{{watchtime}}h</h2>
+            <p>Watch Time</p>
+          </div>
+          <div class="stat-box">
+            <h2>{{avg_score}}</h2>
+            <p>Avg Score</p>
+          </div>
+        </div>
+
+        <!-- Top Lists -->
+        <div class="top-section">
+          <div class="top-lists">
+            <div class="list">
+              <h3>Top Genres</h3>
+              {% for genre in genres %}
+              <div class="list-item">{{genre}}</div>
+              {% endfor %}
+            </div>
+            <div class="list">
+              <h3>Top Studios</h3>
+              {% for studio in studios %}
+              <div class="list-item">{{studio}}</div>
+              {% endfor %}
+            </div>
+            <div class="list">
+              <h3>Top Rated Anime</h3>
+              {% for anime in top_anime %}
+              <div class="list-item">{{anime}}</div>
+              {% endfor %}
+            </div>
+            <div class="list">
+              <h3>Least Popular Anime {{least_popular.title}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button onclick="downloadRecap()">Download Recap</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, section {
+    /* width: 350px; */
+    height: 80vh;
+    aspect-ratio: 9 / 16;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 3px solid black;
+    /* background: linear-gradient(135deg, #ff7eb3, #ff758c); */
+    color: white; /* Ensure text is readable on colorful backgrounds */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+}
+@media (min-width: 1024px) {
+    header, section {
+        aspect-ratio: 16 / 9; /* Switch to 16:9 for larger screens */
+        font-size: 3em;
+    }
+    header h1, section h2 {
+        font-size: 2.5rem;
+    }
+    
+    header h2 {
+        font-size: 3rem;
+    }
+}
+header h1, section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 2.2rem;
+    color: #34c759;
+}
+
+section p, section ul li {
+    font-size: 1rem;
+    color: #666;
+}
+p{
+    font-size: 1rem;
+    color: #666;
+}
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 5px;
+}
+
+.heatmap #heatmap {
+    width: 90%;
+    height: 90%;
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+}
+.recap-container {
+    width: 360px;
+    /* height: 640px; */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.recap-header {
+    margin-bottom: 20px;
+}
+
+.recap-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.recap-header p {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.stat-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card .stat {
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stat h2 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+.stat p {
+    font-size: 0.9rem;
+}
+
+.top-list {
+    margin: 20px 0;
+}
+
+.top-list h3 {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.list-item {
+    border-radius: 6px;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    color: #555;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.recap-container {
+    width: 360px; /* Mobile screen size */
+    /* height: 640px;  */
+    background: linear-gradient(135deg, #fdfbfb, #a4c8da);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.recap-header {
+    margin-bottom: 10px;
+}
+
+.recap-header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.recap-header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.stat-summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-box h2 {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.stat-box p {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.top-lists {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+    gap: 8px;
+    margin-top: 10px;
+    height: auto;
+}
+
+.list {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.list h3 {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* New Recap Card */
+.chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #calendar-heatmap {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    margin: 0 auto;
+  }
