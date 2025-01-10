@@ -371,7 +371,7 @@ def get_anime():
     username = request.args.get('username')
     BASE_URL = f"https://api.myanimelist.net/v2/users/{username}/animelist"
     HEADERS = {
-        'X-MAL-CLIENT-ID':"a4126bcedef78e592db3e280720a9fa1" # Replace with your access token
+        'X-MAL-CLIENT-ID':"your_client_id" # Replace with your access token
     }
     
     # Parameters for the initial request
